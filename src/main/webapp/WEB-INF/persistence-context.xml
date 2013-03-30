@@ -56,7 +56,7 @@
 	</bean>
 
 	<aop:config>
-		<aop:pointcut id="webMethods" expression="execution(* com.stylepopz.web.*.*(..))" />
+		<aop:pointcut id="webMethods" expression="execution(* com.stylepopz.app.web.*.*(..))" />
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="webMethods" />
 	</aop:config>
 

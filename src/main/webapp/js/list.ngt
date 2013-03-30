@@ -1,0 +1,19 @@
+<div class="wrapper">
+    <form ng-submit="addNewItem()">
+        <input type="text" ng-model="itemText" placeholder="Add item" />
+        <button type="submit" class="btn">Add</button>
+    </form>
+
+    <style>
+        .deleted-true {
+            opacity: 0.2;
+        }
+    </style>
+
+    <ul>
+        <li ng-repeat="item in items" class="deleted-{{item.deleted}}">
+            {{item.text}} 
+            <a href="" ng-click="deleteItem(item)">(del)</a>
+        </li>
+    </ul>
+</div>

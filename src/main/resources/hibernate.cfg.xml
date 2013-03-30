@@ -4,6 +4,8 @@
 
 <hibernate-configuration>
 	<session-factory>
-		<mapping class="com.stylepopz.model.Person"/>
+		<mapping class="com.stylepopz.app.model.Person"/>
+		<mapping class="com.stylepopz.app.model.User"/>
+		<mapping class="com.stylepopz.app.model.UserProfile"/>
     </session-factory>
 </hibernate-configuration>
