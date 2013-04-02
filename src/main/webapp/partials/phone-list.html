@@ -1,0 +1,48 @@
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span2">
+      <!--Sidebar content-->
+ 	     Search: <input ng-model="query">
+      
+    	  Sort by:
+			<select ng-model="orderProp">
+  				<option value="name">Alphabetical</option>
+  				<option value="age">Newest</option>
+			</select>
+      
+    <div class="wrapper">
+    	<form ng-submit="addNewItem()">
+        <input type="text" ng-model="itemText" placeholder="Add item" />
+        <button type="submit" class="btn">Add</button>
+    	</form>
+
+    	<style>
+        	.deleted-true {
+            opacity: 0.2;
+        	}
+    	</style>
+
+    	<ul>
+        	<li ng-repeat="item in items" class="deleted-{{item.deleted}}">
+            {{item.text}} 
+            <a href="" ng-click="deleteItem(item)">(del)</a>
+        	</li>
+    	</ul>
+	</div>  
+      
+ 
+    </div>
+    	<div class="span10">
+      	<!--Body content-->
+ 
+      		<ul class="phones">
+        	  <li ng-repeat="phone in phones | filter:query | orderBy:orderProp" class="thumbnail">
+            	<a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}"></a>
+            	<a href="#/phones/{{phone.id}}">{{phone.name}}</a>          
+            	<p>{{phone.snippet}}</p>
+        	  </li>
+    	    </ul>
+ 	   </div>
+ 	   
+  </div>
+</div>

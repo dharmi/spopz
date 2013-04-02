@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" ng-app="fs">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>FS</title>
+
+    <script src="lib/underscore.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="js/fs.js"></script>
+    <script src="js/directives.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body ng-controller='ProfileCtrl'>
+
+  <div class='nav-bar'>
+    <span class='btn-back icon-chevron-left' ng-click='Navigation.back()'>Back</span>
+    <span class='btn-next' ng-click='Navigation.next()'>Next<i class='icon-chevron-right'></i></span>
+  </div>
+
+  <div class='content' id='content'>
+    <ul fs-pages>
+
+      <li fs-page class='page-gender'>
+        <div class='female' ng-click='selectFemale()'ng-class='{selected:isFemale()}'></div>
+        <div class='male' ng-click='selectMale()' ng-class='{selected:isMale()}'></div>
+      </li>
+
+      <li fs-page>
+      Colors
+      </li>
+
+      <li fs-page>
+      Brands
+      </li>
+
+      <li fs-page>
+      Submit
+      </li>
+
+    </ul>
+  </div>
+
+</body>
+</html>

@@ -1,16 +1,9 @@
-angular.module('listapp', []).
+angular.module('listapp', ['stylepopzFilters','stylepopzServices']).
     config(
     		function($routeProvider) {
     $routeProvider.
-        when('/addItem', {
-            templateUrl: 'list.ngt',
-            controller: 'stylepopzController'
-        }).
-        when('/editItem', {
-            templateUrl: 'list.ngt',
-            controller: 'stylepopzController'
-        }).        
-        otherwise({
-            redirectTo: '/'
-    });
+    when('/displayproducts', {templateUrl: 'partials/phone-list.html',   controller: stylepopzController}).
+    when('/phones/:phoneId', {templateUrl: 'partials/phone-detail.html', controller: PhoneDetailCtrl}).
+    otherwise({redirectTo: '/phones'});
+   
 });

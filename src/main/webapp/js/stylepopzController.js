@@ -3,7 +3,7 @@ function stylepopzController($scope, $http){
         {text:'Enter ur Fav!!', deleted: false}
     ];
     
-    $http.get('json/phones.json').success(function(data) {
+    $http.get('phones.json').success(function(data) {
         $scope.phones = data;
       });
      
@@ -24,4 +24,15 @@ function stylepopzController($scope, $http){
     }
     
      $scope.name = "Controller ";
+}
+
+function PhoneDetailCtrl($scope, $routeParams, $http) {
+	  $http.get('json/' + $routeParams.phoneId + '.json').success(function(data) {
+	    $scope.phone = data;
+	    $scope.mainImageUrl = data.images[0];
+	  });
+	 
+	  $scope.setImage = function(imageUrl) {
+	    $scope.mainImageUrl = imageUrl;
+	  }
 }
